@@ -1,0 +1,11 @@
+<h1>Bonjour Monde!</h1>
+
+<ul>
+    ${parks.map(park => `
+    <li>
+        <a href="/${park.id}">${park.name}</a>
+    </li>
+            `).join('')}
+    
+</ul>
+
