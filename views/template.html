@@ -16,6 +16,16 @@
             <a class="navbar-item" href='/ceos'>Apple CEOs</a>
         </div>
     </nav> -->
+    <nav class="menu">
+        <ul>
+            ${!!isLoggedIn ? `
+            <li><a href= "/users/logout">Logout</a></li>
+            ` : `
+            <li><a href= "/users/login">Login</a></li>
+            <li><a href= "/users/signup">Signup</a></li>
+            `}
+        </ul>
+    </nav>
     <h1 class="container">${title}</h1>
     <main class="container">${partial}</main>
 </body>

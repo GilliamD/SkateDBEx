@@ -6,11 +6,13 @@ const parksModel = require('../models/skateparkModel')
 router.get('/', async(req, res, next) => {
   const parksData = await parksModel.getAll();
   console.log('parksData FROM INDEX.JS', parksData)
-
+console.log(req.session)
   res.render('template', {
     locals: {
       title: "Something is off...",
-      parks: parksData
+      parks: parksData,
+      isLoggedIn: req.session.is_logged_in,
+      userName : req
     },
     partials: {
       partial: "partial-index"
